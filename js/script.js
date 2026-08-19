@@ -5,6 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('loader').classList.add('hidden');
   }, 1500);
 
+  /* ========== PERSONALIZE GUEST NAME (no DB needed) ========== */
+  (function personalizeGuest() {
+    const heroName = document.querySelector('.hero-name');
+    if (!heroName) return;
+    const q = new URLSearchParams(window.location.search);
+    let guest = q.get('name');
+    if (guest) {
+      guest = guest.replace(/\+/g, ' ');
+      heroName.textContent = decodeURIComponent(guest);
+      heroName.style.display = 'block';
+    }
+  })();
+
   /* ========== PARTICLES ========== */
   if (typeof particlesJS !== 'undefined') {
     particlesJS('particles-js', {
