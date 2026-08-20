@@ -1,4 +1,4 @@
-*,
+﻿*,
 *::before,
 *::after {
   margin: 0;
@@ -2031,3 +2031,35 @@ section[id] {
   color: #fff;
   transform: rotate(90deg);
 }
+/* ===== AMPLOP DIGITAL (QR + REKENING) ===== */
+.gift-section { padding: 80px 0; background: var(--paper-bg, #f5e6d3); text-align: center; }
+.gift-section .section-title { color: var(--dark, #2C1810); }
+.gift-wrap { display: flex; gap: 40px; justify-content: center; align-items: center; flex-wrap: wrap; margin: 30px 0; }
+.gift-qr-img { width: 200px; height: 200px; border-radius: 12px; box-shadow: var(--shadow, 0 10px 40px rgba(0,0,0,0.08)); background: #fff; }
+.gift-note { color: var(--dark-soft, #4A3728); font-size: 14px; margin-top: 12px; max-width: 220px; }
+.gift-account { text-align: left; line-height: 2; color: var(--dark, #2C1810); }
+.gift-account h4 { font-family: var(--font-heading, serif); margin-bottom: 8px; color: var(--gold, #D4AF37); }
+.gift-account .bank-name strong { color: var(--gold, #D4AF37); }
+.gift-account .rek { font-weight: 700; letter-spacing: 1px; }
+.btn-copy { margin-top: 12px; padding: 10px 22px; border: 1px solid var(--gold-dark, var(--gold, #D4AF37)); background: transparent; color: var(--gold-dark, var(--gold, #D4AF37)); border-radius: 50px; cursor: pointer; font-family: var(--font-body, sans-serif); font-size: 13px; transition: all .3s ease; }
+.btn-copy:hover { background: var(--gold-dark, var(--gold, #D4AF37)); color: #fff; }
+.gift-wa-note { color: var(--dark-soft, #4A3728); font-size: 14px; margin-top: 10px; }
+.gift-wa-note a { color: var(--gold-dark, var(--gold, #D4AF37)); font-weight: 600; text-decoration: none; }
+@media (max-width: 600px) { .gift-wrap { flex-direction: column; } }
+
+/* ===== NAV MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .navbar.scrolled .nav-toggle span { background: var(--dark, #2C1810); }
+  .nav-menu { background: rgba(20,12,8,0.92); width: min(320px, 82%); padding: 70px 20px 30px; gap: 22px; border-left: 1px solid rgba(255,255,255,0.12); z-index: 1100; }
+  .nav-menu.active { right: 0; }
+  .nav-link { font-size: 16px; color: #fff; }
+  .nav-link.active, .nav-link:hover { color: var(--gold, #D4AF37); }
+  .nav-toggle { display: flex; z-index: 1200; }
+  .nav-toggle span { background: #fff; }
+  .nav-close { position: absolute; top: 18px; right: 18px; background: none; border: none; color: #fff; font-size: 30px; line-height: 1; cursor: pointer; z-index: 2; }
+  .nav-close:hover { color: var(--gold, #D4AF37); }
+  .nav-menu.active .nav-close { display: block; }
+}
+
+/* sembunyikan X secara default (desktop & saat menu tertutup) */
+.nav-close { display: none; }
